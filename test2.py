@@ -32,14 +32,14 @@ text_embeds = outputs.text_embeds
 image_embeds = image_embeds / image_embeds.norm(dim=1, keepdim=True)
 text_embeds = text_embeds / text_embeds.norm(dim=1, keepdim=True)
 
-print(image_embeds)
-print(text_embeds)
+#print(image_embeds)
+#print(text_embeds)
 
-quit()
+#quit()
 
 start_time = time.time()
 # Calculate similarity scores
-for i in range(0,16000000):
+for i in range(0,100000000):
     similarity_scores = torch.matmul(text_embeds, image_embeds.T)
 
 print(time.time()-start_time)
